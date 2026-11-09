@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f3f6fb; color: #172033; }
+.container { max-width: 900px; margin: 48px auto; padding: 0 20px; }
+h1 { margin-bottom: 8px; }
+.subtitle { color: #5c667a; margin-bottom: 28px; }
+.panel { background: white; border: 1px solid #dfe5ef; border-radius: 10px; padding: 22px; margin: 18px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 11px; border-bottom: 1px solid #e7ebf2; }
+.error { color: #b42318; background: #fee4e2; padding: 12px; border-radius: 8px; }
+small { color: #5c667a; }

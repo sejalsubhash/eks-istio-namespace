@@ -1,0 +1,35 @@
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata:
+  name: three-tier-gateway
+  namespace: three-tier
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "*"
+---
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: three-tier-vs
+  namespace: three-tier
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - three-tier-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: frontend-service.three-tier.svc.cluster.local
+            port:
+              number: 80
